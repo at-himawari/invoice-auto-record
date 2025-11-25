@@ -9,11 +9,11 @@ export class InvoiceAutoRecordStack extends cdk.Stack {
     super(scope, id, props);
 
     // 1. 既存のS3バケットを参照する
-    // 'himawari-project-accounting' という名前のバケットを取得します
+    // 'himawari-accounting' という名前のバケットを取得します
     const bucket = s3.Bucket.fromBucketName(
       this,
       "ImportedBucket",
-      "himawari-project-accounting"
+      "himawari-accounting" // 対象のバケット名を指定
     );
 
     // 2. Lambda関数の作成 (変更なし)
