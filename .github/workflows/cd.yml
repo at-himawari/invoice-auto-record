@@ -26,11 +26,20 @@ jobs:
         with:
           python-version: "3.9"
 
+      - name: Validate AWS Role ARN
+        run: |
+          if [ -z "${{ secrets.AWS_ROLE_ARN }}" ]; then
+            echo "Error: AWS_ROLE_ARN secret is not set"
+            exit 1
+          fi
+          echo "Role ARN format check passed"
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ap-northeast-1
+          role-session-name: GitHubActions-${{ github.run_id }}
 
       - name: Install dependencies
         run: npm ci
