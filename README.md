@@ -30,7 +30,7 @@
 - Node.js (v14 以上)
 - AWS CLI 設定済み
 - AWS CDK CLI (`npm install -g aws-cdk`)
-- Python 3.9 以上
+- Python 3.13 以上
 
 ## セットアップ
 
@@ -94,7 +94,7 @@ npm run watch
 ## 使用技術
 
 - AWS CDK
-- AWS Lambda (Python 3.9)
+- AWS Lambda (Python 3.13)
 - AWS S3
 - TypeScript
 - Python

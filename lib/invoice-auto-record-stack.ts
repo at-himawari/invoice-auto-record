@@ -18,7 +18,7 @@ export class InvoiceAutoRecordStack extends cdk.Stack {
 
     // 2. Lambda関数の作成 (変更なし)
     const ledgerFunction = new lambda.Function(this, "LedgerUpdater", {
-      runtime: lambda.Runtime.PYTHON_3_9,
+      runtime: lambda.Runtime.PYTHON_3_13,
       handler: "index.lambda_handler",
       code: lambda.Code.fromAsset("lambda"),
       environment: {
